@@ -11,6 +11,7 @@
 		1A8025F32BA8A00E0062B907 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8025F22BA8A00E0062B907 /* ContentView.swift */; };
 		1A8025F52BA8A00F0062B907 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A8025F42BA8A00F0062B907 /* Assets.xcassets */; };
 		1A8025F82BA8A00F0062B907 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A8025F72BA8A00F0062B907 /* Preview Assets.xcassets */; };
+		1AB59A442BA8BE58008D5A5E /* ExchangeInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB59A432BA8BE58008D5A5E /* ExchangeInfoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		1A8025F22BA8A00E0062B907 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1A8025F42BA8A00F0062B907 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1A8025F72BA8A00F0062B907 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1AB59A432BA8BE58008D5A5E /* ExchangeInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeInfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				1A8025F02BA8A00E0062B907 /* LOTRConverter17App.swift */,
 				1A8025F22BA8A00E0062B907 /* ContentView.swift */,
+				1AB59A432BA8BE58008D5A5E /* ExchangeInfoView.swift */,
 				1A8025F42BA8A00F0062B907 /* Assets.xcassets */,
 				1A8025F62BA8A00F0062B907 /* Preview Content */,
 			);
@@ -139,6 +142,7 @@
 			files = (
 				1A8025F32BA8A00E0062B907 /* ContentView.swift in Sources */,
 				1A8025F12BA8A00E0062B907 /* LOTRConverter17App.swift in Sources */,
+				1AB59A442BA8BE58008D5A5E /* ExchangeInfoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
