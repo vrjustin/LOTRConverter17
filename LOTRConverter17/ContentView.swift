@@ -13,6 +13,8 @@ struct ContentView: View {
     
     @State var leftAmount = ""
     @State var rightAmount = ""
+    @FocusState var leftTyping
+    @FocusState var rightTyping
     @State var leftCurrency: Currency = .silverPiece
     @State var rightCurrency: Currency = .goldPiece
     
@@ -59,6 +61,12 @@ struct ContentView: View {
                         //Textfield
                         TextField("Amount", text: $leftAmount)
                             .textFieldStyle(.roundedBorder)
+                            .focused($leftTyping)
+                            .onChange(of: leftAmount, {
+                                if leftTyping {
+                                    rightAmount = leftCurrency.convert(leftAmount, to: rightCurrency)
+                                }
+                            })
                     }
                     // Equal Sign
                     Image(systemName: "equal")
@@ -89,7 +97,13 @@ struct ContentView: View {
                         //Textfield
                         TextField("Amount", text: $rightAmount)
                             .textFieldStyle(.roundedBorder)
+                            .focused($rightTyping)
                             .multilineTextAlignment(.trailing)
+                            .onChange(of: rightAmount, {
+                                if rightTyping {
+                                    leftAmount = rightCurrency.convert(rightAmount, to: leftCurrency)
+                                }
+                            })
                     }
                 }
                 .padding()
