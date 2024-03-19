@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SelectCurrencyView: View {
     @Environment(\.dismiss) var shouldDismiss
+    @State var selectedCurrency: Currency
 
     var body: some View {
         ZStack {
@@ -26,7 +27,20 @@ struct SelectCurrencyView: View {
                 // Currency Icons
                 LazyVGrid(columns: [GridItem(), GridItem(), GridItem()], content: {
                     ForEach(Currency.allCases) {currency in
-                        CurrencyIcon(currencyImage: currency.image, currencyName: currency.name)
+                        if currency == selectedCurrency {
+                            CurrencyIcon(currencyImage: currency.image, currencyName: currency.name)
+                                .shadow(color: .black, radius: 10)
+                                .overlay {
+                                    RoundedRectangle(cornerRadius: 25.0)
+                                        .stroke(lineWidth: 3)
+                                        .opacity(0.5)
+                                }
+                        } else {
+                            CurrencyIcon(currencyImage: currency.image, currencyName: currency.name)
+                                .onTapGesture {
+                                    selectedCurrency = currency
+                                }
+                        }
                     }
                 })
                 
@@ -53,5 +67,5 @@ struct SelectCurrencyView: View {
 }
 
 #Preview {
-    SelectCurrencyView()
+    SelectCurrencyView(selectedCurrency: .silverPiece)
 }
