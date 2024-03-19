@@ -17,6 +17,7 @@
 		1AB59A4C2BA9AD99008D5A5E /* CurrencyIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB59A4B2BA9AD99008D5A5E /* CurrencyIcon.swift */; };
 		1AB59A4E2BA9B86A008D5A5E /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB59A4D2BA9B86A008D5A5E /* Currency.swift */; };
 		1AB59A502BA9D607008D5A5E /* IconGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB59A4F2BA9D607008D5A5E /* IconGridView.swift */; };
+		1AB59A522BAA010A008D5A5E /* CurrencyTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB59A512BAA010A008D5A5E /* CurrencyTip.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		1AB59A4B2BA9AD99008D5A5E /* CurrencyIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyIcon.swift; sourceTree = "<group>"; };
 		1AB59A4D2BA9B86A008D5A5E /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		1AB59A4F2BA9D607008D5A5E /* IconGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconGridView.swift; sourceTree = "<group>"; };
+		1AB59A512BAA010A008D5A5E /* CurrencyTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTip.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				1AB59A4B2BA9AD99008D5A5E /* CurrencyIcon.swift */,
 				1AB59A432BA8BE58008D5A5E /* ExchangeInfoView.swift */,
 				1AB59A472BA9A00F008D5A5E /* ExchangeRateRowView.swift */,
+				1AB59A512BAA010A008D5A5E /* CurrencyTip.swift */,
 				1A8025F42BA8A00F0062B907 /* Assets.xcassets */,
 				1A8025F62BA8A00F0062B907 /* Preview Content */,
 			);
@@ -160,6 +163,7 @@
 				1AB59A482BA9A00F008D5A5E /* ExchangeRateRowView.swift in Sources */,
 				1AB59A442BA8BE58008D5A5E /* ExchangeInfoView.swift in Sources */,
 				1AB59A4A2BA9A9E2008D5A5E /* SelectCurrencyView.swift in Sources */,
+				1AB59A522BAA010A008D5A5E /* CurrencyTip.swift in Sources */,
 				1AB59A4E2BA9B86A008D5A5E /* Currency.swift in Sources */,
 				1AB59A4C2BA9AD99008D5A5E /* CurrencyIcon.swift in Sources */,
 				1AB59A502BA9D607008D5A5E /* IconGridView.swift in Sources */,

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import TipKit
 
 struct ContentView: View {
     @State var showExchangeInfo = false
@@ -20,35 +21,28 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            //Background Image
             Image(.background)
                 .resizable()
                 .ignoresSafeArea()
             
             VStack {
-                // Prancing Pony Image
                 Image(.prancingpony)
                     .resizable()
                     .scaledToFit()
                     .frame(height: 200)
                 
-                // Currency Exchange Text
                 Text("Currency Exchange")
                     .font(.largeTitle)
                     .foregroundStyle(.white)
                 
-                // Currency Conversion Text
                 HStack {
                     // Left Conversion
                     VStack {
-                        //Currency
                         HStack {
-                            // Currency Image
                             Image(leftCurrency.image)
                                 .resizable()
                                 .scaledToFit()
                                 .frame(height: 33)
-                            //Currency Text
                             Text(leftCurrency.name)
                                 .font(.headline)
                                 .foregroundStyle(.white)
@@ -57,15 +51,14 @@ struct ContentView: View {
                         .onTapGesture {
                             showSelectCurrencyView.toggle()
                         }
+                        .popoverTip(CurrencyTip(), arrowEdge: .bottom)
                         
-                        //Textfield
                         TextField("Amount", text: $leftAmount)
                             .textFieldStyle(.roundedBorder)
                             .focused($leftTyping)
                             .keyboardType(.decimalPad)
                             
                     }
-                    // Equal Sign
                     Image(systemName: "equal")
                         .font(.largeTitle)
                         .foregroundStyle(.white)
@@ -73,14 +66,11 @@ struct ContentView: View {
                     
                     // Right Conversion
                     VStack {
-                        //Currency
                         HStack {
-                            // Currency Text
                             Text(rightCurrency.name)
                                 .font(.headline)
                                 .foregroundStyle(.white)
                             
-                            //Currency Image
                             Image(rightCurrency.image)
                                 .resizable()
                                 .scaledToFit()
@@ -91,7 +81,6 @@ struct ContentView: View {
                             showSelectCurrencyView.toggle()
                         }
                         
-                        //Textfield
                         TextField("Amount", text: $rightAmount)
                             .textFieldStyle(.roundedBorder)
                             .focused($rightTyping)
@@ -106,7 +95,6 @@ struct ContentView: View {
                 
                 Spacer()
                 
-                // Info Button
                 HStack {
                     Spacer()
                     Button {
@@ -121,6 +109,9 @@ struct ContentView: View {
 
             }
 //            .border(.blue)
+        }
+        .task {
+            try? Tips.configure()
         }
         .onChange(of: leftAmount, {
             if leftTyping {
