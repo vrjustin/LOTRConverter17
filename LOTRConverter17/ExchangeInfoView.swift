@@ -28,22 +28,14 @@ struct ExchangeInfoView: View {
                     .padding()
                 
                 // Exchange Rates
-                HStack {
-                    //Left Currency Image
-                    Image(.goldpiece)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(height: 33)
-                    
-                    // Exchange Rate Text
-                    Text("1 Gold Piece = 4 Gold Pennies")
-                    // Right Currency Image
-                    Image(.goldpenny)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(height: 33)
-                }
-                
+                ExchangeRateRowView(leftImage: .goldpiece, rateText: "1 Gold Piece = 4 Gold Pennies", rightImage: .goldpenny)
+
+                ExchangeRateRowView(leftImage: .goldpenny, rateText: "1 Gold Penny = 4 Silver Pieces", rightImage: .silverpiece)
+
+                ExchangeRateRowView(leftImage: .silverpiece, rateText: "1 Silver Piece = 4 Silver Pennies", rightImage: .silverpenny)
+
+                ExchangeRateRowView(leftImage: .silverpenny, rateText: "1 Silver Penny = 100 Copper Pennies", rightImage: .copperpenny)
+
                 // Done Button
                 Button("Done") {
 
