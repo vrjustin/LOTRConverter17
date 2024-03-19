@@ -9,7 +9,8 @@ import SwiftUI
 
 struct SelectCurrencyView: View {
     @Environment(\.dismiss) var shouldDismiss
-    @State var selectedCurrency: Currency
+    @State var topSelectedCurrency: Currency = .copperPenny
+    @State var bottomSelectedCurrency: Currency = .silverPenny
 
     var body: some View {
         ZStack {
@@ -25,30 +26,14 @@ struct SelectCurrencyView: View {
                     .fontWeight(.bold)
                 
                 // Currency Icons
-                LazyVGrid(columns: [GridItem(), GridItem(), GridItem()], content: {
-                    ForEach(Currency.allCases) {currency in
-                        if currency == selectedCurrency {
-                            CurrencyIcon(currencyImage: currency.image, currencyName: currency.name)
-                                .shadow(color: .black, radius: 10)
-                                .overlay {
-                                    RoundedRectangle(cornerRadius: 25.0)
-                                        .stroke(lineWidth: 3)
-                                        .opacity(0.5)
-                                }
-                        } else {
-                            CurrencyIcon(currencyImage: currency.image, currencyName: currency.name)
-                                .onTapGesture {
-                                    selectedCurrency = currency
-                                }
-                        }
-                    }
-                })
+                IconGridView(selectedCurrency: topSelectedCurrency)
                 
                 // Text
                 Text("Select the currency you would like to convert to:")
                     .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                 
                 // Currency Icons
+                IconGridView(selectedCurrency: bottomSelectedCurrency)
                 
                 // Done Button
                 Button("Done") {
@@ -67,5 +52,5 @@ struct SelectCurrencyView: View {
 }
 
 #Preview {
-    SelectCurrencyView(selectedCurrency: .silverPiece)
+    SelectCurrencyView()
 }
